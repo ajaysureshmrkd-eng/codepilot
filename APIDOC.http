@@ -1,0 +1,94 @@
+
+# api call for create admin accounts
+
+###
+POST  http://127.0.0.1:8000/accounts/admin/register/
+Content-Type: application/json
+
+{
+    "username":"adminuser",
+    "email":"admin@gmail.com",
+    "password":"admin@123",
+    "phone":"5498765433"
+}
+
+# api call for  create student account
+
+###
+POST http://127.0.0.1:8000/accounts/student/register/
+Content-Type: application/json
+
+{
+    "username":"student_01",
+    "email":"student@gmail.com",
+    "password":"student@123",
+    "phone":"9876568463"
+}
+
+
+#api call for token
+###
+POST http://127.0.0.1:8000/accounts/token/
+Content-Type: application/json
+
+{
+    "username":"adminuser",
+    "password":"admin@123"
+}
+
+===========================================================
+
+# api call for listing
+###
+GET http://127.0.0.1:8000/exams/assement/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+3 api call for adding
+###
+POST http://127.0.0.1:8000/exams/assement/
+Content-Type: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+{
+    "title":"django restframework",
+    "batch":"python july A",
+    "language":"python",
+    "exam_date":"2026-10-30",
+    "status":"completed",
+    "duration":"3",
+    "start_time":"10:00:00"
+
+}
+
+# api call for retrieve
+###
+GET http://127.0.0.1:8000/exams/assements/2/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+
+# api call for update
+###
+PUT http://127.0.0.1:8000/exams/assements/2/
+Content-Type: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+{
+  
+  "title": "java final exam",
+  "batch": "java july b",
+  "language": "java",
+  "status": "completed",
+  "exam_date": "2026-10-30",
+  "duration": 2,
+  "start_time": "10:00:00"
+}
+
+# api call for deleted
+###
+DELETE http://127.0.0.1:8000/exams/assements/3/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+
