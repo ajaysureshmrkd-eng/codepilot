@@ -36,53 +36,53 @@ Content-Type: application/json
     "password":"admin@123"
 }
 
-===========================================================
+===================Assement========================================
 
 # api call for listing
 ###
-GET http://127.0.0.1:8000/exams/assement/
+GET http://127.0.0.1:8000/exams/all/
 Accept: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 3 api call for adding
 ###
-POST http://127.0.0.1:8000/exams/assement/
+POST http://127.0.0.1:8000/exams/add/
 Content-Type: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 {
-    "title":"django restframework",
-    "batch":"python july A",
+    "title":"django exam",
+    "batch":"python july c",
     "language":"python",
-    "exam_date":"2026-10-30",
+    "exam_date":"2026-10-28",
     "status":"completed",
-    "duration":"3",
+    "duration":"2",
     "start_time":"10:00:00"
 
 }
 
 # api call for retrieve
 ###
-GET http://127.0.0.1:8000/exams/assements/2/
+GET http://127.0.0.1:8000/exams/2/
 Accept: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 
 # api call for update
 ###
-PUT http://127.0.0.1:8000/exams/assements/2/
+PUT http://127.0.0.1:8000/exams/5/
 Content-Type: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 {
   
-  "title": "java final exam",
-  "batch": "java july b",
-  "language": "java",
-  "status": "completed",
-  "exam_date": "2026-10-30",
+  "title": "Mysql exam",
+  "batch": "python july d",
+  "language": "python",
+  "status": "published",
+  "exam_date": "2026-10-29",
   "duration": 2,
-  "start_time": "10:00:00"
+  "start_time": "09:00:00"
 }
 
 # api call for deleted
