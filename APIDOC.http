@@ -91,4 +91,49 @@ DELETE http://127.0.0.1:8000/exams/assements/3/
 Accept: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
+=================================================================
 
+###
+POST http://127.0.0.1:8000/problem/assessment/2/question/
+Content-Type: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+{
+    "title":"add two number",
+    "description":"write a two number add",
+    "score":50,
+    "sample_input":"num1=100 num2=80",
+    "sample_output":"result =180"
+}
+
+
+# api call for retrieve 
+
+###
+GET http://127.0.0.1:8000/problem/ret/upd/del/1/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+###
+PUT http://127.0.0.1:8000/problem/ret/upd/del/1/
+Content-Type: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+{
+  "id": 1,
+  "title": "subtraction two number",
+  "description": "write a two number add",
+  "score": 50,
+  "sample_input": "num1=100 num2=80",
+  "sample_output": "result =20",
+  "created_at": "2026-10-26T06:18:20.669309Z",
+  "updated_at": "2026-10-26T06:18:20.669336Z",
+  "assessment": 2,
+  "created_by": 2
+}
+
+
+###
+DELETE http://127.0.0.1:8000/problem/ret/upd/del/1/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5

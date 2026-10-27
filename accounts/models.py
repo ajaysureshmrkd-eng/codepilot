@@ -13,4 +13,4 @@ class User(AbstractUser):
         ("admin","admin")
     )
 
-    role =models.CharField(max_length=200,choices=ROLE_CHOICES,default="student")
+    role =models.CharField(max_length=200,choices=ROLE_CHOICES,default="student")   
