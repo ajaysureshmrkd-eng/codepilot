@@ -33,7 +33,7 @@ class Question(models.Model):
 
     def save(self, *args,**kwargs):
 
-        last_object =Question.objects.filter(movie=self.movie).last()
+        last_object =Question.objects.filter(assessment=self.assessment).last()
 
         if last_object:
 
