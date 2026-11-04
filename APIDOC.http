@@ -19,10 +19,10 @@ POST http://127.0.0.1:8000/accounts/student/register/
 Content-Type: application/json
 
 {
-    "username":"student_01",
-    "email":"student@gmail.com",
-    "password":"student@123",
-    "phone":"9876568463"
+    "username":"ajay",
+    "email":"ajayes7306@gmail.com",
+    "password":"ajay@123",
+    "phone":"9876576645"
 }
 
 
@@ -36,7 +36,55 @@ Content-Type: application/json
     "password":"admin@123"
 }
 
-===================Assement========================================
+
+#======================= signal ===============================
+
+# api call for student profile account
+###
+PUT http://127.0.0.1:8000/accounts/profile/complete/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjg3NjAzLCJpYXQiOjE3OTM2ODczMDMsImp0aSI6IjRjNmYwNWRmZjEyNzQ5ZmVhM2MyNmUwNjg4ODNiMjM0IiwidXNlcl9pZCI6IjYifQ.EeWdJTFLWQle3WRRZacS5vYi-tmA_Mc113VGgbeaB-0
+
+{
+    "skills":"HTML,CSS,DRf,Python",
+    "qualification":"Degree",
+    "passout_year":"2026",
+    "github_url":"http://github.com",
+    "linked_url":"http://linkedin.com"
+}
+
+# api call for detalis
+###
+GET http://127.0.0.1:8000/accounts/profile/me/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjg4MjAyLCJpYXQiOjE3OTM2ODc5MDIsImp0aSI6ImI4MTI3ODhmNmE2ZjRlZmU5MGJjOTRmMDBiZjQwYTg4IiwidXNlcl9pZCI6IjYifQ.IymXJD1GMxi6kvxt6_7Ltpl-bHPI4l__bWtUt8Dgbfw
+
+
+
+#==================== JWt ============================================
+
+# api call for jwt access
+###
+POST http://127.0.0.1:8000/accounts/jwt/token/
+Content-Type: application/json
+
+{
+    "username":"9876548645",
+    "password":"student@123"
+}
+
+
+# api call for jwt refresh
+###
+POST http://127.0.0.1:8000/accounts/jwt/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5MzY4ODY3NSwiaWF0IjoxNzkzNjAyMjc1LCJqdGkiOiIxN2I4MDYwYTFjMzI0YmMwOTg2OTA5NDlhNTg3MDJmYSIsInVzZXJfaWQiOiI1In0.NWtLRSggYjtKfBDHgdGftARu8heGi5RWGG9JVp1wj64"
+}
+
+
+#===================Assement========================================
 
 # api call for listing
 ###
@@ -51,10 +99,10 @@ Content-Type: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 {
-    "title":"django exam",
-    "batch":"python july c",
+    "title":"python core exam",
+    "batch":"django july c",
     "language":"python",
-    "exam_date":"2026-10-28",
+    "exam_date":"2026-10-30",
     "status":"completed",
     "duration":"2",
     "start_time":"10:00:00"
@@ -91,19 +139,19 @@ DELETE http://127.0.0.1:8000/exams/assements/3/
 Accept: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
-=================================================================
+#=================================================================
 
 ###
-POST http://127.0.0.1:8000/problem/assessment/1/question/
+POST http://127.0.0.1:8000/problem/assessment/8/question/
 Content-Type: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 
 {
-    "title":"add division number",
-    "description":"write a two number division",
+    "title":"add multiplication number",
+    "description":"write a two number multiplication",
     "score":50,
-    "sample_input":"num1=56 num2=",
-    "sample_output":"result =7"
+    "sample_input":"num1=25 num2=5",
+    "sample_output":"result =5"
 }
 
 
@@ -137,3 +185,43 @@ Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
 DELETE http://127.0.0.1:8000/problem/ret/upd/del/1/
 Accept: application/json
 Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+
+#===================== submission end point ==========================
+
+# api call for submission create 
+###
+POST http://127.0.0.1:8000/evaluation/assessment/6/submission/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjAyNjExLCJpYXQiOjE3OTM2MDIzMTEsImp0aSI6IjlhZjZkZWNiZTFhNTRiYzRhZjU5NTQxMmI0NWNkNTY1IiwidXNlcl9pZCI6IjUifQ.v0OYwl8jO2JvLmV4ucM-KTyQecHmGrs5tpN7PnUTWcw
+
+# api call for answer submission
+###
+POST http://127.0.0.1:8000/evaluation/submission/8/answer/
+Content-Type: application/json
+Authorization: Token e43e3cf009c5d71f6726e6db073aabdb9bf7ddeb
+
+{
+    "question":3,
+    "answer_text":"print('output = 5')"
+}
+
+
+# api call for retrieve
+###
+GET http://127.0.0.1:8000/evaluation/submission/5/
+Accept: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+
+
+======== evaluation answer==========
+###
+PATCH http://127.0.0.1:8000/evaluation/answer/2/
+Content-Type: application/json
+Authorization: Token b8ec069b707ee87df53f354d23edd127076583e5
+
+{
+    "marks_awarded":0,
+    "feedback":" entrie logic wrong, no marks"
+}
